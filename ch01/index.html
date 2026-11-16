@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1장. 기계가 인간을 완벽하게 흉내 낸다면 — 생존을 위한 최소한의 AI 교양</title>
+<meta name="description" content="『생존을 위한 최소한의 AI 교양』 1장을 직접 만져 보며 읽는 인터랙티브 슬라이드. 에니그마를 눌러 보고, 이미테이션 게임의 질문자가 되어 봅니다.">
+<meta property="og:title" content="1장. 기계가 인간을 완벽하게 흉내 낸다면, 그것도 생각이라고 불러야 할까?">
+<meta property="og:description" content="생존을 위한 최소한의 AI 교양 — 만져 보는 슬라이드">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23EDE6D6'/%3E%3Ccircle cx='32' cy='32' r='21' fill='%23E23D1F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=JetBrains+Mono:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../shared/deck.css">
+<link rel="stylesheet" href="ch01.css">
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 01 표지 -->
+<section class="slide" id="cover" data-title="표지">
+  <p class="kicker">생존을 위한 최소한의 AI 교양 <b>PART 1</b> 기계는 정말 인간처럼 생각할 수 있을까?</p>
+  <div class="print cover-print"><img class="ill" src="img/corridor.webp" alt="두 개의 닫힌 문이 마주 보는 복도, 바닥에 쪽지 한 장"></div>
+  <div class="cover-seal"><b>1</b>장</div>
+  <h1 class="cover-title typed caret" data-type="기계가 인간을\n완벽하게 {흉내} 낸다면,\n그것도 생각이라고\n불러야 할까?"></h1>
+  <div class="cover-note note"><span class="mono">→</span> 키를 눌러 첫 쪽지를 넘기세요<small>화면의 버튼과 기계는 직접 만질 수 있습니다</small></div>
+</section>
+
+<!-- 02 이상한 기분 -->
+<section class="slide" id="hook" data-title="이상한 기분">
+  <p class="kicker">AI와 대화하다 보면</p>
+  <div class="chat">
+    <div class="bub me">요즘 왜 이렇게 의욕이 없지.</div>
+    <div class="bub ai">지난주 내내 야근이셨잖아요.<br>지친 게 당연해요.</div>
+    <div class="bub me">…어떻게 알았어?</div>
+  </div>
+  <p class="thought typed" data-type="‘이 녀석,\n나를 {너무 잘}\n이해하는 것 같은데?’"></p>
+  <p class="hook-2 body">혹시 AI에게도 영혼이 있는 걸까 —<br>그런 상상, 해 본 적 있으신가요.</p>
+  <div class="yearbox">
+    <div class="yr mono">1950</div>
+    <div class="yr-txt">
+      <p class="h-m">70여 년 전,<br>똑같은 고민을 먼저 한 사람</p>
+      <h2 class="h-xl riso">앨런 튜링</h2>
+      <p class="mono yr-en">Alan Turing · 영국의 수학자</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 에니그마 -->
+<section class="slide" id="enigma" data-title="에니그마">
+  <p class="kicker">2차 세계대전 · 독일군의 난공불락 암호 체계</p>
+  <img class="ill enigma-ill" src="img/enigma.webp" alt="나무 상자에 든 로터식 암호 기계">
+  <h2 class="h-xl enigma-title riso" data-scr="에니그마"></h2>
+  <p class="enigma-sub mono">ENIGMA — 독일어로 ‘수수께끼’</p>
+  <svg class="leader" viewBox="0 0 1920 1080"><path d="M1500 318 L1330 430" /><circle cx="1330" cy="430" r="9"/></svg>
+  <div class="callout c1 note"><b>회전판(로터) 세 개</b>글자를 누를 때마다 돌아가서, 같은 글자를 연속으로 눌러도 매번 다른 암호가 나옵니다.</div>
+  <div class="callout c2 note"><b>1920년대 · 원래는 상업용</b>기업의 통신 보안 장치로 태어나, 나치 독일이 군사용으로 개량했습니다.</div>
+  <div class="callout c3 note"><b>매일 자정, 설정 변경</b>하루치 암호를 풀어도 다음 날이면 다시 원점.</div>
+</section>
+
+<!-- 04 타건 -->
+<section class="slide night" id="play" data-title="직접 눌러 보기" data-trans="iris">
+  <p class="kicker">키보드로 치거나 자판을 누르세요</p>
+  <div class="en-left">
+    <h2 class="h-l">같은 글자를<br>계속 누르면?</h2>
+    <p class="en-msg body">자판의 <b>A</b>를 여러 번 눌러 보세요.</p>
+    <div class="en-btns"><button class="btn" data-act="midnight">자정 — 설정 변경</button><button class="btn" data-act="reset">처음으로</button></div>
+    <p class="en-foot">로터 I · II · III, 반사판 B의 실제 배선을 그대로 옮겼습니다.</p>
+  </div>
+  <div class="en-machine" data-nodrag>
+    <div class="rotors"><div class="rotor"><b>A</b></div><div class="rotor"><b>A</b></div><div class="rotor"><b>A</b></div></div>
+    <div class="lamps"></div>
+    <div class="keys"></div>
+  </div>
+  <div class="en-tape"><h3 class="mono">입력 → 암호</h3><ol class="mono"></ol></div>
+</section>
+
+<!-- 05 경우의 수 -->
+<section class="slide" id="number" data-title="경우의 수">
+  <p class="kicker">이 기계가 만들어 내는 경우의 수</p>
+  <div class="big-num mono" data-num="158,962,555,217,826,360,000"></div>
+  <div class="kor-num">
+    <span class="u big"><b>1</b>해</span><span class="u big"><b>5,896</b>경</span>
+    <span class="u"><b>2,555</b>조</span><span class="u"><b>2,178</b>억</span><span class="u"><b>2,636</b>만</span>
+    <span class="u tail">개가 넘는 경우의 수</span>
+  </div>
+  <div class="num-sim" data-nodrag>
+    <div class="sim-q">
+      <h3 class="h-m">1초에 하나씩<br>대입해 본다면?</h3>
+      <label class="sim-row"><span>함께 푸는 사람 <output class="ppl mono">1명</output></span>
+        <input type="range" min="0" max="6" step="0.02" value="0" aria-label="함께 푸는 사람 수"></label>
+    </div>
+    <div class="sim-a">
+      <b class="yrs">약 5조 년</b>
+      <span class="cmp">우주의 나이(138억 년)의 약 365배</span>
+      <div class="sim-bar"><i class="t"></i><i class="u"></i></div>
+      <small>단순 계산입니다: 경우의 수 ÷ (1초에 1개 × 사람 수). 게다가 독일군은 매일 자정에 설정을 바꿨습니다.</small>
+    </div>
+  </div>
+</section>
+
+<!-- 06 봄 -->
+<section class="slide" id="bombe" data-title="봄 Bombe">
+  <p class="kicker">영국 블레츨리 파크 · 암호 해독 기계 ‘봄 Bombe’</p>
+  <img class="ill bombe-ill" src="img/bombe.webp" alt="회전 드럼이 줄지어 달린 대형 해독 기계">
+  <h2 class="bombe-title typed" data-type="“기계는 {기계}로만\n이길 수 있다”"></h2>
+  <div class="hunt" data-nodrag>
+    <div class="wheels"><div class="wheel"><b>A</b></div><div class="wheel"><b>A</b></div><div class="wheel"><b>A</b></div></div>
+    <div class="hunt-side">
+      <p class="hunt-n mono"><b>0</b> 가지 조합 시험</p>
+      <p class="hunt-msg">하루에 수천 가지 조합을 자동으로 시험해 그날의 설정을 찾아냈습니다.</p>
+      <button class="btn" data-act="hunt">오늘의 설정 찾기</button>
+    </div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b class="n1">2</b><span>년 이상<br>전쟁을 단축</span></div>
+    <div class="stat"><b class="n2">1,400</b><span>만 명 이상의<br>목숨을 구한 셈</span></div>
+    <small>— 역사가들의 평가</small>
+  </div>
+</section>
+
+<!-- 07 튜링 머신 -->
+<section class="slide" id="tm" data-title="튜링 머신">
+  <p class="kicker">전쟁 전, 스물네 살의 발명</p>
+  <h2 class="h-l tm-title">종이 위에 지은 기계,<br><em>튜링 머신</em></h2>
+  <p class="body tm-lead">인간의 개입 없이, 규칙에 따라<br>스스로 읽고 쓰는 가상의 기계.</p>
+  <div class="tm-uni note"><b>보편적 튜링 머신</b>프로그램만 바꾸면 어떤 계산이든 해내는 기계. <em>하드웨어와 소프트웨어의 분리</em> — 오늘날 컴퓨터의 기본 개념이 여기서 시작됩니다.</div>
+  <div class="tm-band"><div class="tm-cells"></div></div>
+  <div class="tm-head"><span class="mono">읽기 · 쓰기</span></div>
+  <div class="tm-panel" data-nodrag>
+    <div class="tm-progs">
+      <h3>프로그램 카드를 갈아 끼우세요</h3>
+      <div class="cards"></div>
+    </div>
+    <div class="tm-rules"><h3>규칙표 <span class="state mono">상태 A</span></h3><ol class="mono"></ol></div>
+    <div class="tm-ctl">
+      <div class="tm-btns"><button class="btn" data-act="run">▶ 실행</button><button class="btn" data-act="one">한 칸</button><button class="btn" data-act="reset">되감기</button></div>
+      <p class="tm-out mono"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 08 질문 -->
+<section class="slide" id="question" data-title="기계는 생각할 수 있는가">
+  <p class="kicker">1950년 · 논문 「계산 기계와 지능」</p>
+  <div class="q-mark" aria-hidden="true">?</div>
+  <h2 class="q-line" data-split="기계는 생각할 수 있는가?"></h2>
+  <p class="q-en mono">Can machines think?</p>
+  <div class="q-swap">
+    <p class="q-old">“지능이란 무엇인가?”<i></i></p>
+    <p class="q-new">끝없는 정의 대신, 실용적인 기준 하나 —<br><b>사람과 구별할 수 없을 만큼 자연스럽게 대화한다면,<br>지능이 있다고 봐야 하지 않을까.</b></p>
+  </div>
+</section>
+
+<!-- 09 이미테이션 게임 -->
+<section class="slide" id="parlor" data-title="이미테이션 게임">
+  <p class="kicker par-kick">19세기 영국 · 빅토리아 시대 사교 파티의 ‘성별 맞히기 게임’</p>
+  <h2 class="h-l par-title"><span class="t t1">이미테이션 게임의<br>원형</span><span class="t t2">튜링은 한쪽을<br><em>기계</em>로 바꿨다</span></h2>
+  <div class="print par-print"><img class="ill" src="img/note_door.webp" alt="문틈으로 쪽지를 밀어 넣는 손끝"></div>
+  <div class="par">
+    <div class="room ra"><div class="door"><i></i><i></i><u></u></div><s class="slit"></s>
+      <div class="who"><span class="flip"><b class="f1">남자</b><b class="f2 mono">기계</b></span><small><span class="f1">여자인 척, 질문자를 속인다</span><span class="f2">사람인 척, 질문자를 속인다</span></small></div></div>
+    <div class="room rb"><div class="door"><i></i><i></i><u></u></div><s class="slit"></s>
+      <div class="who"><span class="flip"><b class="f1">여자</b><b class="f2">사람</b></span><small><span class="f1">질문자가 맞히도록 돕는다</span><span class="f2">질문자가 맞히도록 돕는다</span></small></div></div>
+    <div class="asker"><svg viewBox="0 0 120 150"><circle cx="60" cy="38" r="28"/><path d="M8 150c0-40 22-62 52-62s52 22 52 62z"/></svg><b>질문자</b><small>복도에서 쪽지로만 묻는다</small><i class="huh">?</i></div>
+    <div class="pnote q1">어느 방에 여자가 있나요?</div>
+    <div class="pnote q2">어느 방에 여자가 있나요?</div>
+    <div class="pnote a1"><span class="f1">저는 여자예요.</span><span class="f2 mono">저는 사람이에요.</span></div>
+    <div class="pnote a2"><span class="f1">저는 여자예요.</span><span class="f2">저는 사람이에요.</span></div>
+  </div>
+  <p class="par-foot body"><span class="t t1">옆방의 남자가 더 그럴듯하게 ‘여성인 척’하면,<br>질문자는 오히려 더 헷갈립니다.</span><span class="t t2">질문자가 기계와 사람을 구별하지 못한다면 —<br>그 기계에게 지능이 있다고 봐야 하지 않을까요?</span></p>
+</section>
+
+<!-- 10 당신이 질문자 -->
+<section class="slide" id="game" data-title="당신이 질문자">
+  <p class="kicker">이미테이션 게임 · 체험판</p>
+  <div class="g-col ga"><div class="g-room"><div class="inside"></div><div class="door"><i></i><i></i><u></u><span class="mono">A</span></div><s class="slit"></s></div><ol class="g-ans"></ol></div>
+  <div class="g-col gb"><div class="g-room"><div class="inside"></div><div class="door"><i></i><i></i><u></u><span class="mono">B</span></div><s class="slit"></s></div><ol class="g-ans"></ol></div>
+  <div class="g-mid" data-nodrag>
+    <h2 class="h-m">이번엔 당신이 질문자입니다</h2>
+    <p class="g-lead">두 방 중 하나에는 기계가 있습니다. 쪽지 <b>세 장</b>으로 가려내 보세요.</p>
+    <div class="g-qs"></div>
+    <div class="g-verdict"><span>어느 방이 기계일까요?</span><button class="btn" data-v="A" disabled>A가 기계</button><button class="btn" data-v="B" disabled>B가 기계</button></div>
+    <div class="g-result note"><h3></h3><p></p><small>이 체험의 답변은 양쪽 모두 미리 써 둔 대본입니다.</small><button class="btn" data-act="again">다시 하기</button></div>
+  </div>
+</section>
+
+<!-- 11 구별 실패 -->
+<section class="slide" id="tv" data-title="구별 실패">
+  <p class="kicker">우리나라 방송에서 벌어진 AI 대 인간의 대결</p>
+  <h2 class="h-l tv-title">전문가 심사단도<br><em>구별하지 못했다</em></h2>
+  <div class="tv-cards">
+    <div class="tvc" data-kind="notes"><h3>작곡</h3><svg viewBox="0 0 440 240"></svg><span class="stamp">구별 실패</span></div>
+    <div class="tvc" data-kind="chart"><h3>주식투자</h3><svg viewBox="0 0 440 240"></svg><span class="stamp">구별 실패</span></div>
+    <div class="tvc" data-kind="wave"><h3>성대모사</h3><svg viewBox="0 0 440 240"></svg><span class="stamp">구별 실패</span></div>
+  </div>
+  <p class="tv-legend mono"><i class="h"></i>사람 <i class="a"></i>AI <span>— 두 선이 겹치는 모습은 개념을 보여 주는 그림이며 실제 데이터가 아닙니다</span></p>
+  <p class="body tv-foot">결과물만 보고 AI와 사람을 가려내는 시험.<br>그의 이름을 따서 <b>‘튜링 테스트’</b>라고 부릅니다.</p>
+</section>
+
+<!-- 12 학습하는 기계 -->
+<section class="slide" id="learn" data-title="학습하는 기계">
+  <p class="kicker">튜링의 또 다른 예견 · ‘학습하는 기계’</p>
+  <h2 class="learn-title">어른을 만들지 말고,<br><em>아이</em>를 만들어 가르쳐라</h2>
+  <p class="learn-lead">어른의 지능을 처음부터 프로그래밍하기보다, 아이의 지능을 가진 기계를 만들어 교육으로 지식을 쌓게 하는 편이 낫다.</p>
+  <img class="ill learn-ill" src="img/child_robot.webp" alt="작은 책상에 앉아 돌 놓는 판을 들여다보는 양철 로봇">
+  <div class="rl" data-nodrag>
+    <div class="rl-board"></div>
+    <div class="rl-side">
+      <p class="rl-stat"><span>스스로 둔 대국</span><b class="mono">0</b><i>판</i></p>
+      <svg class="rl-graph" viewBox="0 0 420 190"><path class="ax" d="M36 10V160H414"/><path class="half" d="M36 85H414"/><path class="ln" d=""/><text x="2" y="16">100%</text><text x="8" y="90">50%</text><text x="36" y="182">연습량 →</text></svg>
+      <p class="rl-cap">무작위로 두는 상대에게 <b>지지 않는 비율</b></p>
+      <div class="rl-btns"><button class="btn" data-n="1000">+1,000판</button><button class="btn" data-n="30000">+30,000판</button><button class="btn" data-act="reset">백지로</button></div>
+    </div>
+    <p class="rl-msg">먼저 한 판 둬 보세요. 당신이 <b>흑</b>, 세 개를 나란히 놓으면 이깁니다.</p>
+  </div>
+  <div class="rl-note note"><b>70년 뒤, 알파고</b>딥마인드는 바둑의 규칙만 알려 주고 수만 번의 대국을 스스로 치르게 했습니다. 이기면 사탕, 지면 없음 — 보상으로 전략을 고쳐 나가는 <em>강화 학습</em>입니다.<small>위 3목은 그 방식을 아주 단순하게 줄인 시연입니다.</small></div>
+</section>
+
+<!-- 13 예언 -->
+<section class="slide" id="prophecy" data-title="예언">
+  <p class="kicker">같은 논문에 적힌 예언</p>
+  <blockquote class="pq">“나는 약 50년 후, 즉 20세기 말쯤에는<br><span class="jit" data-split="기계가 생각한다"></span>고 말해도<br>아무도 어색하게 여기지 않을 것이라고 믿는다.”</blockquote>
+  <div class="tl" data-nodrag>
+    <div class="tl-line"><i class="tl-fill"></i></div>
+    <div class="tl-ev" style="--x:0"><b class="mono">1950</b><span>논문 발표</span></div>
+    <div class="tl-ev" style="--x:.658"><b class="mono">2000</b><span>‘약 50년 후’</span></div>
+    <div class="tl-ev" style="--x:.868"><b class="mono">2016</b><span>알파고,<br>이세돌 9단을 꺾다</span></div>
+    <div class="tl-ev" style="--x:1"><b>지금</b><span>AI와 함께 일하는 우리</span></div>
+    <button class="tl-knob" aria-label="연표 손잡이"></button>
+  </div>
+  <p class="tl-hint mono">← 손잡이를 끌어 보세요 →</p>
+  <p class="body pf">AI가 만들어 내는 지적 결과물 때문에 인류의 언어 사용 방식 자체가 바뀔 것 —<br>이것 역시 그가 70년 전에 내다본 미래였습니다.</p>
+</section>
+
+<!-- 14 튜링상 -->
+<section class="slide" id="award" data-title="튜링상">
+  <p class="kicker">그의 이름을 딴 상 · 미국컴퓨터학회(ACM), 1966년부터 매년</p>
+  <img class="ill award-ill" src="img/trophy.webp" alt="리본을 맨 은빛 트로피와 월계수 가지">
+  <h2 class="h-xl award-title riso">튜링상</h2>
+  <p class="award-sub">컴퓨터 과학의 <em>노벨상</em></p>
+  <p class="prize"><span class="mono">$<b>1,000,000</b></span><small>상금 100만 달러 · 2014년부터 구글 후원</small></p>
+  <div class="laur" data-nodrag>
+    <div class="grp g1"><h3>2018년 공동 수상 · ‘AI의 삼총사’</h3>
+      <button class="lc"><span class="f"><b>제프리 힌튼</b><i class="mono">Geoffrey Hinton</i></span><span class="bk">‘딥러닝의 아버지’</span></button>
+      <button class="lc"><span class="f"><b>얀 르쿤</b><i class="mono">Yann LeCun</i></span><span class="bk">페이스북 AI 연구소를 이끈 연구자</span></button>
+      <button class="lc"><span class="f"><b>요슈아 벤지오</b><i class="mono">Yoshua Bengio</i></span><span class="bk">‘역전파 알고리즘’을 발전시킨 연구자</span></button>
+    </div>
+    <div class="grp g2"><h3>우리 삶을 바꾼 수상자들</h3>
+      <button class="lc"><span class="f"><b>빈트 서프</b><i class="mono">Vint Cerf</i></span><span class="bk">인터넷의 아버지</span></button>
+      <button class="lc"><span class="f"><b>팀 버너스리</b><i class="mono">Tim Berners-Lee</i></span><span class="bk">월드와이드웹을 발명</span></button>
+    </div>
+  </div>
+  <p class="award-foot">카드를 누르면 뒤집힙니다 · 이들의 연구가 없었다면 챗GPT도, 이미지 생성 AI도 없었을 것입니다.</p>
+</section>
+
+<!-- 15 한 사람의 삶 -->
+<section class="slide" id="life" data-title="한 사람의 삶">
+  <p class="kicker">기술의 역사 뒤에 숨은 한 사람의 삶</p>
+  <div class="print life-print"><img class="ill" src="img/desk_back.webp" alt="밤의 창가 책상에 앉아 글을 쓰는 사람의 뒷모습"></div>
+  <h2 class="h-l life-title">전쟁 영웅,<br>그리고 유죄 판결</h2>
+  <ol class="life-tl">
+    <li><b class="mono">전쟁 뒤</b><span>당시 영국 법률에 따라 동성애 혐의로 유죄 판결을 받고, 화학적 거세를 강요당하다</span></li>
+    <li><b class="mono">1954</b><span>마흔한 살의 나이로 세상을 떠나다</span></li>
+    <li><b class="mono">2013</b><span>엘리자베스 2세 여왕, 사후 사면</span></li>
+    <li><b class="mono">2014</b><span>영화 〈이미테이션 게임〉 — 아카데미 각색상</span></li>
+    <li><b class="mono">2021</b><span>영국 50파운드 지폐의 인물로. 비로소 회복된 명예</span></li>
+  </ol>
+</section>
+
+<!-- 16 당신의 답 -->
+<section class="slide" id="end" data-title="당신의 답">
+  <p class="kicker">1장을 덮으며 — 다시, 처음의 질문</p>
+  <h2 class="end-title">기계가 인간을 완벽하게 <em>흉내</em> 낸다면,<br>그것도 생각이라고 불러야 할까?</h2>
+  <div class="vote" data-nodrag><button class="vb" data-v="y"><b>생각이다</b><span>구별할 수 없다면 같은 것</span></button><button class="vb" data-v="n"><b>흉내일 뿐이다</b><span>겉이 같아도 속은 다르다</span></button></div>
+  <p class="vote-out"></p>
+  <div class="recap">
+    <div class="note"><b>튜링 테스트</b>사람과 구별할 수 없게 대화한다면, 지능이 있다고 본다.</div>
+    <div class="note"><b>학습하는 기계</b>지능은 프로그래밍이 아니라 교육으로. 알파고와 강화 학습의 뿌리.</div>
+    <div class="note"><b>튜링상</b>그의 이름은 컴퓨터 과학 최고의 영예로 남았다.</div>
+  </div>
+  <a class="next-note note" href="../"><small>다음 쪽지 · 준비 중</small><b>2장. 세상의 모든 규칙을 컴퓨터에 집어넣으면 AI가 될까?</b><span class="mono">목록으로 →</span></a>
+</section>
+
+<div class="grain"></div>
+</div></div>
+<div class="rotate-hint">가로 화면에서 가장 잘 보입니다</div>
+
+<script src="../shared/lib/gsap.min.js"></script>
+<script src="../shared/deck.js"></script>
+<script src="ch01.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>
