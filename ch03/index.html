@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>3장. AI는 왜 두 번이나 죽었다가 살아났을까 — 생존을 위한 최소한의 AI 교양</title>
+<meta name="description" content="『생존을 위한 최소한의 AI 교양』 3장을 직접 만져 보며 읽는 인터랙티브 슬라이드. 약속을 끌어올리다 겨울을 맞고, 규칙을 손으로 고치고, 작은 신경망을 직접 가르쳐 봅니다.">
+<meta property="og:title" content="3장. AI는 왜 두 번이나 죽었다가 살아났을까 : 기대와 실망의 70년 드라마">
+<meta property="og:description" content="생존을 위한 최소한의 AI 교양 — 만져 보는 슬라이드">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23EDE6D6'/%3E%3Ccircle cx='32' cy='32' r='21' fill='%23E23D1F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=JetBrains+Mono:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../shared/deck.css">
+<link rel="stylesheet" href="ch03.css">
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 01 표지 -->
+<section class="slide" id="cover" data-title="표지">
+  <p class="kicker">생존을 위한 최소한의 AI 교양 <b>PART 1</b> 기계는 정말 인간처럼 생각할 수 있을까?</p>
+  <div class="print cover-print"><img class="ill" src="img/cover_tree.webp" alt="왼쪽 절반은 눈 맞은 겨울 가지, 오른쪽 절반은 꽃이 만개한 한 그루 나무"></div>
+  <div class="cover-seal"><b>3</b>장</div>
+  <h1 class="cover-title typed caret" data-type="AI는 왜 {두 번}이나\n죽었다가\n살아났을까"></h1>
+  <p class="cover-sub">기대와 실망의 <b>70년</b> 드라마</p>
+  <div class="cover-note note"><span class="mono">→</span> 키를 눌러 첫 쪽지를 넘기세요<small>화면의 버튼과 장치는 직접 만질 수 있습니다</small></div>
+</section>
+
+<!-- 02 계절 -->
+<section class="slide" id="seasons" data-title="두 번의 겨울, 세 번의 봄">
+  <p class="kicker">AI의 역사도 계절처럼 바뀌었습니다</p>
+  <h2 class="h-l ss-title">두 번의 혹독한 <span class="w">겨울</span>,<br>세 번의 눈부신 <em>봄</em></h2>
+  <p class="ss-lead">자연과 다른 점이 하나 있습니다.<br>황금 같은 봄의 기대가 무르익으면,<br><b>어김없이 혹독한 겨울이 찾아왔다</b>는 것.</p>
+  <div class="band"></div>
+  <p class="ss-cap">막대의 높이는 기대의 크기를 나타낸 개념도 · 실제 데이터가 아닙니다</p>
+  <p class="ss-q typed" data-type="지금의 세 번째 봄은 계속될까요? 아니면, {또 다른 겨울의 예고편}일까요?"></p>
+</section>
+
+<!-- 03 다트머스 -->
+<section class="slide spring" id="dartmouth" data-title="1956년 다트머스" data-season="1">
+  <p class="kicker">첫 번째 봄 1950~1974 · ‘기계가 인간처럼 생각한다’는 꿈의 시작</p>
+  <img class="ill dm-ill" src="img/table.webp" alt="빈 의자 열 개가 둘러싼 긴 회의 탁자, 여름 햇살">
+  <h2 class="h-l dm-title">1956년 여름,<br>다트머스</h2>
+  <p class="dm-sub mono">미국 뉴햄프셔주 하노버 · 다트머스 대학 · 약 두 달</p>
+  <div class="dm-stat"><span><b>10</b>명 규모의<br>연구 모임으로 기획</span><i class="mono">→</i><span><b>수십</b> 명이<br>드나든 여름</span></div>
+  <div class="dm-hypo note"><small>그들이 세운, 인류 역사상 가장 대담한 가설</small><p class="typed" data-type="‘기계가 인간처럼 생각하도록\n만드는 것이 {가능하다}.’"></p></div>
+  <div class="dm-stamp"><b>인공지능</b><i class="mono">Artificial Intelligence</i><span>이 분야에 붙인 이름 · 제안자 존 매카시</span></div>
+  <div class="dm-legs" data-nodrag>
+    <button class="lg"><span class="f"><b>존 매카시</b><i class="mono">John McCarthy</i></span><span class="bk">프로그래밍 언어 LISP를 만들다</span></button>
+    <button class="lg"><span class="f"><b>마빈 민스키</b><i class="mono">Marvin Minsky</i></span><span class="bk">MIT 인공지능연구소를 설립하다</span></button>
+    <button class="lg"><span class="f"><b>클로드 섀넌</b><i class="mono">Claude Shannon</i></span><span class="bk">‘정보 이론의 아버지’</span></button>
+    <button class="lg"><span class="f"><b>허버트 사이먼</b><i class="mono">Herbert Simon</i></span><span class="bk">1978년 노벨 경제학상</span></button>
+  </div>
+  <p class="dm-foot">카드를 누르면 뒤집힙니다 · 참석자 상당수가 이후 각자의 분야에서 전설이 됩니다</p>
+</section>
+
+<!-- 04 엘리자 -->
+<section class="slide spring" id="eliza" data-title="엘리자" data-season="1">
+  <p class="kicker">1966년 · MIT 조셉 바이젠바움이 만든 대화 프로그램</p>
+  <h2 class="h-xl el-title riso" data-scr="엘리자"></h2>
+  <p class="el-en mono">ELIZA</p>
+  <p class="el-lead">단순한 <b>패턴 매칭</b>만으로도, 사람들은<br>심리상담을 받는 듯한 착각에 빠졌습니다.</p>
+  <div class="el-how note">고민을 한 줄 적어 보내 보세요.<small>예시 문장을 눌러도 됩니다. 몇 마디 나눈 뒤 —</small><button class="btn" data-act="open">속을 열어 보기</button></div>
+  <div class="el-chat" data-nodrag>
+    <h3 class="mono">상담실 · 엘리자와의 대화</h3>
+    <ol class="el-log"></ol>
+    <div class="el-chips"></div>
+    <form class="el-form"><input type="text" maxlength="40" placeholder="여기에 적고 Enter" aria-label="엘리자에게 보낼 말" autocomplete="off"><button class="btn" type="submit">보내기</button></form>
+  </div>
+  <img class="ill el-ill" src="img/teletype.webp" alt="빈 안락의자를 마주 보는 전신 타자기">
+  <div class="el-rules">
+    <h3>엘리자의 속 <span>규칙표</span></h3>
+    <ol></ol>
+    <p>마법은 없습니다. 문장에서 낱말을 찾아, 정해 둔 대답을 꺼낼 뿐.</p>
+  </div>
+  <p class="el-foot">엘리자의 방식을 흉내 낸 시연입니다 · 규칙과 문장은 이 덱에서 만든 예시입니다</p>
+</section>
+
+<!-- 05 약속과 현실 -->
+<section class="slide spring" id="promise" data-title="약속과 현실" data-season="1">
+  <p class="kicker">골드러시처럼 몰려든 자본과 열정 · 그리고 당찬 약속들</p>
+  <h2 class="h-l pr-title">약속을 위로<br><em>끌어올려</em> 보세요</h2>
+  <p class="pr-msg"></p>
+  <p class="pr-cap">막대와 높이는 개념을 보여 주는 그림이며 실제 데이터가 아닙니다.<br>인용문과 연도는 책 본문을 따랐습니다.</p>
+  <div class="pr-rig">
+    <div class="pr-fund"><div class="bars"></div><b>연구 자금</b><small>DARPA의 막대한 지원</small></div>
+    <i class="pr-track"></i>
+    <i class="pr-band"></i>
+    <div class="pr-real"><span>실제 성과</span></div>
+    <div class="pr-knob"><span>약속</span></div>
+    <p class="pr-hint mono">↑ 끌어올리기</p>
+    <div class="pr-note note" style="top:612px"><b>‘10년 안에 인간 수준의 AI를’</b>당시 연구자들의 장담</div>
+    <div class="pr-note note" style="top:392px"><b>‘20년 안에 기계가 인간이 할 수 있는 모든 일을 해낼 것’</b>허버트 사이먼, 1965년</div>
+    <div class="pr-note note" style="top:176px"><b>‘한 세대 안에 인공지능 문제는 실질적으로 해결될 것’</b>마빈 민스키, 1967년</div>
+    <div class="pr-hit" data-nodrag aria-label="약속 손잡이"></div>
+  </div>
+  <div class="chill"></div>
+  <div class="pr-report note" data-nodrag><i class="mono">1973</i><b>라이트힐 보고서</b><p>‘AI 연구는 어떤 분야에서도<br>당초 기대했던 성과를<br>보여주지 못했다.’</p><small>영국 과학연구위원회의 의뢰로 수학자 제임스 라이트힐이 평가한 AI 연구 현황</small><button class="btn" data-act="again">다시 끌어올리기</button></div>
+</section>
+
+<!-- 06 첫 번째 겨울 -->
+<section class="slide winter" id="winter1" data-title="첫 번째 겨울" data-season="2">
+  <p class="kicker">첫 번째 겨울 1974~1980 · 과장된 약속이 만들어 낸 혹독한 반동</p>
+  <h2 class="w1-title" data-split="자금이 끊겼다"></h2>
+  <p class="w1-lead">보고서 하나로 영국의 AI 연구 자금은 대폭 삭감됐고, 미국 국방고등연구계획국(DARPA)도 성과가 미진한 AI 연구소들에 대한 지원을 끊기 시작했습니다.</p>
+  <div class="print w1-print"><img class="ill" src="img/frozen_lab.webp" alt="눈과 고드름에 덮인 채 버려진 전산실, 뽑힌 전원 플러그"></div>
+  <h3 class="w1-ask">왜 그 화려한 약속은<br>지켜지지 못했을까</h3>
+  <div class="w1-why">
+    <div class="why"><i>1</i><p><b>너무 느린 컴퓨터</b>처리 속도와 메모리가 부족해, 복잡한 논리 추론을 구현하기엔 하드웨어 자체의 한계가 너무 컸습니다.</p></div>
+    <div class="why"><i>2</i><p><b>상식과 문맥</b>기호와 논리 규칙으로는, 인간에게는 자연스러운 상식적 판단이나 문맥 이해를 처리할 수 없었습니다.</p></div>
+    <div class="why"><i>3</i><p><b>언어의 복잡성</b>상황에 따라 달라지는 말의 뉘앙스를 규칙만으로 분석하는 것은 사실상 불가능했습니다.</p></div>
+  </div>
+  <p class="w1-end">‘<span class="st">10년 안에 인간 수준의 AI<i></i></span>’<small>그 약속은 지켜지지 못했습니다</small></p>
+</section>
+
+<!-- 07 두 번째 봄 -->
+<section class="slide spring" id="expert" data-title="두 번째 봄" data-season="3">
+  <p class="kicker">두 번째 봄 1980~1987 · 전문가 시스템이 불러온 황금기</p>
+  <h2 class="h-l ex-title">모든 걸 잘하는 AI 대신,<br><em>한 분야의 전문가</em>를</h2>
+  <p class="ex-lead">겨울에서 살아남은 연구자들은 전략을 바꿨습니다.<br>특정 분야의 전문가를 흉내 내는 AI — <b>전문가 시스템</b>.</p>
+  <img class="ill ex-ill" src="img/binders.webp" alt="두꺼운 규칙 바인더 더미와 청진기, 1980년대 컴퓨터 단말기">
+  <div class="ex-my note">
+    <i class="mono">MYCIN</i><b>마이신</b>
+    <p>혈액 감염·뇌수막염 같은 심각한 세균 감염을 진단하고, 적절한 항생제를 추천합니다.</p>
+    <div class="ex-acc mono"><b>65~70</b>%</div>
+    <div class="ex-scale"><i></i><u class="mono">0</u><u class="mono">100%</u></div>
+    <p class="ex-vs">성능 테스트의 처방 정확도 —<br><em>감염병 전문의보다 높았습니다</em></p>
+  </div>
+  <div class="ex-f500">
+    <div class="dots"></div>
+    <p><b class="mono">1985</b>년쯤, 포춘 500대 기업의 <em>거의 절반</em>이 AI 개발 프로젝트를 진행하고 있었다는 이야기도 있었습니다.</p>
+    <small>점 하나가 기업 하나 · 개념도</small>
+  </div>
+  <p class="ex-q typed" data-type="마치 {지금의 AI 붐}과 닮아 있지 않나요?"></p>
+</section>
+
+<!-- 08 규칙의 무게 -->
+<section class="slide spring" id="rules" data-title="규칙의 무게" data-season="3">
+  <p class="kicker">법률 전문가 시스템을 직접 운영해 보세요 · 시연</p>
+  <h2 class="h-l ru-title">법이 바뀔 때마다,<br><em>일일이 손으로</em></h2>
+  <p class="ru-msg"></p>
+  <div class="ru-btns" data-nodrag><button class="btn" data-act="revise">법 개정!</button><button class="btn" data-act="grow">규칙 4배로</button><button class="btn" data-act="reset">처음으로</button></div>
+  <div class="ru-cost">
+    <div class="row"><span>운영 비용</span><i class="op"></i></div>
+    <div class="row"><span>유지보수 비용</span><i class="mt"></i><b class="mono"></b></div>
+    <small>비용은 시연용 가정입니다 — 고쳐야 할 규칙 하나를 1로 셉니다</small>
+  </div>
+  <div class="ru-book" data-nodrag>
+    <div class="ru-head"><span>지식 데이터베이스 · 규칙 <b class="mono n">24</b>개</span><span class="st">손봐야 할 규칙 <b class="mono r">0</b>개</span><i class="timer"><u></u></i></div>
+    <div class="ru-grid"></div>
+  </div>
+  <div class="ru-note note"><b>유지보수 비용이 운영 비용을 압도했다</b>법률 시스템은 법이 개정될 때마다 수천 개의 규칙을 일일이 손으로 고쳐야 했고, 의료 시스템은 지식 데이터베이스에 없는 희귀 질환에는 전혀 대응하지 못했습니다.</div>
+</section>
+
+<!-- 09 두 번째 겨울 -->
+<section class="slide winter" id="winter2" data-title="두 번째 겨울" data-season="4">
+  <p class="kicker">두 번째 겨울 1987~1993 · 전문가 시스템의 몰락과 두 번째 동면</p>
+  <div class="w2-year mono">1987</div>
+  <h2 class="w2-title">연달아<br>무너지다</h2>
+  <div class="w2-dom">
+    <div class="dom"><i class="mono">01</i><b>리스프 머신<br>시장 붕괴</b><span>전문가 시스템을 돌리던 전용 하드웨어. 매킨토시·IBM PC 같은 범용 개인용 컴퓨터가 대체해 버렸습니다.</span></div>
+    <div class="dom"><i class="mono">02</i><b>일본 5세대<br>컴퓨터 프로젝트</b><span>야심 차게 추진했지만, 목표에 한참 못 미치는 결과를 내며 축소됐습니다.</span></div>
+    <div class="dom"><i class="mono">03</i><b>미국·영국의<br>AI 투자</b><span>급격히 줄어들었습니다.</span></div>
+  </div>
+  <div class="w2-paper" data-nodrag>
+    <small class="mono">어느 논문의 표지 · 예시</small>
+    <p class="pt"><button class="w2-word" aria-label="낱말 바꾸기"><span>인공지능</span></button>을 이용한<br>진단 규칙의 자동 생성</p>
+    <p class="hint mono">↑ 주홍 낱말을 눌러 보세요</p>
+    <p class="say"></p>
+  </div>
+  <div class="w2-term note"><b>‘AI 겨울’이라는 말</b>1984년 무렵 쓰이기 시작했습니다. 핵전쟁 이후의 ‘핵겨울’에서 빌려 온 표현 — 기대에 부풀었던 투자와 관심이 갑자기 얼어붙는 현상을 가리킵니다.</div>
+</section>
+
+<!-- 10 꺼지지 않은 불 -->
+<section class="slide night" id="hinton" data-title="꺼지지 않은 불" data-trans="iris" data-season="4">
+  <p class="kicker">두 번의 겨울 동안에도 포기하지 않은 사람</p>
+  <h2 class="h-xl hi-name">제프리 힌튼</h2>
+  <p class="hi-en mono">Geoffrey Hinton · ‘딥러닝의 대부’</p>
+  <p class="hi-lead">다른 연구자들이 더 잘 작동하는 방법론으로 눈을 돌릴 때도,<br>그는 <b>인공 신경망</b>만을 파고들었습니다.</p>
+  <blockquote class="hi-q">‘인간의 뇌가 신경망으로 작동하는데,<br>기계도 그렇게 만들면<br>반드시 성과가 나올 것’</blockquote>
+  <div class="hi-wall" data-nodrag></div>
+  <p class="hi-cap">창문은 개념을 보여 주는 그림입니다 · 켜진 창을 눌러 보세요</p>
+  <ol class="hi-tl">
+    <li><b class="mono">1980~90년대</b><span>논문은 거절당하기 일쑤, 연구 자금 확보조차 어려웠다</span></li>
+    <li><b class="mono">2012</b><span>제자 알렉스 크리제프스키의 ‘알렉스넷’, 이미지 인식 대회 압도적 1위</span></li>
+    <li><b class="mono">2013~</b><span>10년 동안 구글 부사장으로 AI 비전을 설계</span></li>
+    <li><b class="mono">2018</b><span>튜링상 수상</span></li>
+    <li><b class="mono">2023</b><span>구글을 떠나며, AI가 인류에게 위협이 될 수 있다고 경고</span></li>
+    <li><b class="mono">2024</b><span>노벨 물리학상 수상</span></li>
+  </ol>
+</section>
+
+<!-- 11 딥러닝 -->
+<section class="slide spring" id="deep" data-title="딥러닝" data-season="5">
+  <p class="kicker">세 번째 봄 2012~현재 · 딥러닝이 불러온 진짜 혁명</p>
+  <h2 class="h-l dp-title">규칙을 적어 주는 대신,<br><em>스스로</em> 찾게 하다</h2>
+  <p class="dp-lead">기존의 AI가 사람이 일일이 규칙을 적어 준 <b>요리책</b>이었다면, 딥러닝은 뇌 신경망을 본뜬 수만 개의 가상 신경 세포가 신호를 주고받으며 스스로 정답을 찾아가는 방식입니다.</p>
+  <div class="dp-ctl" data-nodrag>
+    <div class="dp-pick"><span>찍을 점</span><button class="pk on" data-c="1"><i></i>주홍</button><button class="pk" data-c="0"><i></i>먹</button></div>
+    <div class="dp-btns"><button class="btn" data-act="train">▶ 학습시키기</button><button class="btn" data-act="clear">점 지우기</button><button class="btn" data-act="reset">백지로</button></div>
+    <p class="dp-stat">학습 <b class="mono it">0</b>회 · 아직 틀리는 점 <b class="mono er">–</b></p>
+  </div>
+  <div class="dp-field" data-nodrag><canvas width="720" height="720" aria-label="신경망 학습 판"></canvas></div>
+  <p class="dp-cap">가상 신경 세포 21개짜리 아주 작은 신경망이 화면 안에서 실제로 학습하는 시연입니다. 바탕의 망점은 신경망이 지금 내놓는 답 — 규칙은 한 줄도 적어 주지 않았습니다.</p>
+  <div class="dp-alex note"><b><i class="mono">2012</i> 알렉스넷 AlexNet</b><p>힌튼의 연구팀, 이미지 인식 대회에서 기존 기술 대비 오류율을 <em>거의 절반</em>으로.</p>
+    <div class="bar"><span>기존 기술</span><i class="a"></i></div><div class="bar"><span>알렉스넷</span><i class="b"></i></div><small>막대는 ‘거의 절반’을 그린 개념도</small></div>
+</section>
+
+<!-- 12 세 번째 봄 -->
+<section class="slide spring" id="boom" data-title="세 번째 봄" data-season="5">
+  <p class="kicker">알렉스넷 이후 · 구글, 딥마인드, 오픈AI의 연구와 투자</p>
+  <img class="ill bm-ill" src="img/sprout.webp" alt="두꺼운 눈을 뚫고 올라온 주홍빛 새싹">
+  <p class="bm-row"><i class="mono">2015</i><b>ResNet</b>인간의 인식 능력을 넘어서다</p>
+  <div class="bm-big b1"><i class="mono">2023 · 챗GPT</i><b class="n1">1억 명</b><small>출시 <em>두 달</em> 만에 달성한 사용자</small></div>
+  <div class="bm-big b2"><i class="mono">2025 · 글로벌 AI 시장</i><b class="n2">2,500억 달러</b><small>매년 <em>20~30%</em> 이상 성장</small></div>
+  <div class="bm-q">
+    <h3>그렇다면, 세 번째 겨울은 올까요?</h3>
+    <div class="note a1"><b>“오지 않을 것”</b>제프리 힌튼, 한국 언론과의 인터뷰. 과거의 봄들은 지킬 수 없는 약속이었지만, 지금의 AI는 이미 실제 서비스와 비즈니스 현장에서 눈에 보이는 성과를 내고 있기 때문입니다.</div>
+    <div class="note a2"><b>그럼에도, 경계심</b>과도한 기대는 언제나 실망의 씨앗이 되어 왔습니다. AI 기업들의 약속이 이번엔 정말 지켜질 수 있는지, 두 눈을 똑바로 뜨고 지켜봐야 합니다.</div>
+  </div>
+</section>
+
+<!-- 13 70년의 곡선 -->
+<section class="slide" id="hype" data-title="70년의 곡선">
+  <p class="kicker">1일 1AI · ‘AI 겨울’과 가트너의 기대치 순환 주기(Hype Cycle)</p>
+  <div class="hy-read"><b class="mono yr">1950</b><p><strong class="sn">첫 번째 봄</strong><span class="ev"></span></p></div>
+  <p class="hy-q">지금 우리는, 이 곡선의<br><em>어디쯤</em>에 서 있을까요?</p>
+  <div class="hy-chart" data-nodrag><svg viewBox="0 0 1680 480" aria-label="1950년부터 지금까지 AI에 대한 기대를 그린 개념 곡선"></svg></div>
+  <div class="hy-knob"></div>
+  <p class="hy-hint mono">← 곡선 위 손잡이를 끌어 70년을 오가 보세요 →</p>
+  <ol class="hy-stage"><li><b>과도한 기대의 정점</b><span>AI의 첫 번째 봄</span></li><li><b>환멸의 골짜기</b><span>첫 번째 겨울</span></li><li><b>점진적 회복</b></li><li><b>생산성 안정기</b></li></ol>
+  <p class="hy-cap">곡선은 책의 서술을 따라 그린 개념도이며 실제 통계가 아닙니다</p>
+  <div class="chill"></div>
+</section>
+
+<!-- 14 이름을 지어 준 사람 -->
+<section class="slide" id="namer" data-title="이름을 지어 준 사람">
+  <p class="kicker">인물 탐구 <b>존 매카시</b> ‘AI’라는 이름을 지어 준 사람</p>
+  <h2 class="h-l nm-title">이 이름이 없었다면,<br>뭐라고 불렀을까요?</h2>
+  <img class="ill nm-ill" src="img/nametag.webp" alt="아무것도 적히지 않은 이름표가 매달린 진공관 기계와 만년필">
+  <div class="nm-book"><small>이 책의 제목에 달아 본다면 · 상상</small><p>생존을 위한<br>최소한의<br><span class="slot"></span> 교양</p><div class="nm-tags"><span><i></i> 시대</span><span><i></i> 겨울</span></div></div>
+  <div class="nm-pick" data-nodrag>
+    <h3>이름표를 골라 달아 보세요</h3>
+    <div class="chips"></div>
+    <p class="nm-say"></p>
+  </div>
+</section>
+
+<!-- 15 1.7 아인슈타인 -->
+<section class="slide" id="life" data-title="1.7 아인슈타인">
+  <p class="kicker">인물 탐구 <b>존 매카시</b> 이름짓기에서 끝나지 않은 공헌</p>
+  <div class="print lf-print"><img class="ill" src="img/back_mainframe.webp" alt="벽면 가득한 대형 컴퓨터 앞에 앉은 사람의 뒷모습"></div>
+  <h2 class="h-l lf-title">천재들 사이에서도<br>눈에 띄는 천재</h2>
+  <p class="lf-lead">매카시의 공헌은 이름짓기에서 끝나지 않았습니다.<br>한 계단씩, 평생에 걸쳐.</p>
+  <div class="lf-steps">
+    <div class="note"><b>어린 시절</b>병치레로 학교를 자주 빠진 시간을 칼텍 교재 독학으로 채우다. 칼텍 수학과를 2년 만에 졸업, 프린스턴에서 박사학위</div>
+    <div class="note"><b>1958</b>프로그래밍 언어 리스프(LISP) 발명. ‘시분할 시스템’ 제안 — 오늘날 클라우드 컴퓨팅의 원조</div>
+    <div class="note"><b>1962</b>스탠퍼드 인공지능연구소(SAIL) 설립 — 마이신을 비롯한 수많은 혁신의 산실</div>
+    <div class="note"><b>1971</b>튜링상 수상</div>
+    <div class="note"><b>~2011</b>두 번의 겨울에도 멈추지 않고, 세상을 떠날 때까지 ‘상식을 가진 AI’라는 숙제에 매달리다</div>
+  </div>
+  <div class="lf-quote">
+    <div class="num mono">1.7</div>
+    <blockquote>“인공지능 연구에 필요한 것은<br><em>1.7 아인슈타인</em>,<br>그리고 대형 컴퓨터 자원에<br>대한 접근이다.”</blockquote>
+    <p>— 존 매카시 · 지금의 AI 시대를 내다본 듯한 말</p>
+  </div>
+</section>
+
+<!-- 16 당신의 예보 -->
+<section class="slide" id="end" data-title="당신의 예보">
+  <p class="kicker">3장을 덮으며 — PART 1의 마지막 쪽지</p>
+  <h2 class="en-title">지금의 세 번째 <em>봄</em>은 계속될까요,<br>또 다른 <span class="w">겨울</span>의 예고편일까요?</h2>
+  <div class="vote" data-nodrag><button class="vb" data-v="y"><b>봄은 계속된다</b><span>이미 눈에 보이는 성과가 있다</span></button><button class="vb" data-v="n"><b>겨울은 또 온다</b><span>과도한 기대는 실망의 씨앗</span></button></div>
+  <p class="vote-out"></p>
+  <div class="recap">
+    <div class="note"><b>두 번의 겨울, 세 번의 봄</b>AI의 70년은 봄의 기대가 무르익을 때마다 어김없이 겨울이 찾아온 역사입니다.</div>
+    <div class="note"><b>겨울을 부른 것은 과장된 약속</b>‘10년 안의 인간 수준 AI’도, 전문가 시스템도 약속만큼 해내지 못했습니다.</div>
+    <div class="note"><b>겨울에도 멈추지 않은 사람들</b>힌튼의 신경망이 2012년 세 번째 봄을 열었습니다. 이번 약속은, 지켜볼 일입니다.</div>
+  </div>
+  <a class="next-note note" href="../"><small>PART 1 끝</small><b>기계는 정말 인간처럼 생각할 수 있을까? — 첫 번째 묶음을 덮습니다</b><span class="mono">목록으로 →</span></a>
+</section>
+
+<div class="grain"></div>
+</div></div>
+<div class="rotate-hint">가로 화면에서 가장 잘 보입니다</div>
+
+<script src="../shared/lib/gsap.min.js"></script>
+<script src="../shared/deck.js"></script>
+<script src="ch03.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>

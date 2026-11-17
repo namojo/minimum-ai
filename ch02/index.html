@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>2장. 세상의 모든 규칙을 컴퓨터에 집어넣으면 AI가 될까? — 생존을 위한 최소한의 AI 교양</title>
+<meta name="description" content="『생존을 위한 최소한의 AI 교양』 2장을 직접 만져 보며 읽는 인터랙티브 슬라이드. 규칙을 쌓다 예외에 무너져 보고, 점을 찍어 기계가 스스로 선을 긋게 하고, 당근과 채찍으로 로봇을 가르쳐 봅니다.">
+<meta property="og:title" content="2장. 세상의 모든 규칙을 컴퓨터에 집어넣으면 AI가 될까?">
+<meta property="og:description" content="생존을 위한 최소한의 AI 교양 — 만져 보는 슬라이드">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%23EDE6D6'/%3E%3Ccircle cx='32' cy='32' r='21' fill='%23E23D1F'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&family=JetBrains+Mono:wght@400;700&family=Nanum+Gothic+Coding:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../shared/deck.css">
+<link rel="stylesheet" href="ch02.css">
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 01 표지 -->
+<section class="slide" id="cover" data-title="표지">
+  <p class="kicker">생존을 위한 최소한의 AI 교양 <b>PART 1</b> 기계는 정말 인간처럼 생각할 수 있을까?</p>
+  <div class="print cover-print"><img class="ill" src="img/mainframe_cards.webp" alt="쌓인 카드 더미에서 카드가 날아 들어가는 1960년대 대형 컴퓨터"></div>
+  <div class="cover-seal"><b>2</b>장</div>
+  <h1 class="cover-title typed caret" data-type="세상의 모든 {규칙}을\n컴퓨터에 집어넣으면\nAI가 될까?"></h1>
+  <p class="cover-rule mono"><b>IF</b> <span>규칙을 전부 넣는다</span> <b>THEN</b> <span class="q">지능이 된다 ?</span></p>
+  <div class="cover-note note"><span class="mono">→</span> 키를 눌러 두 번째 쪽지 묶음을 넘기세요<small>규칙을 쌓고, 점을 찍고, 당근을 주며 읽습니다</small></div>
+</section>
+
+<!-- 02 자전거 -->
+<section class="slide" id="bike" data-title="자전거">
+  <p class="kicker">아이에게 자전거 타는 법을 가르칠 때를 떠올려 보세요</p>
+  <div class="print bike-print"><img class="ill" src="img/bike_back.webp" alt="안장을 놓아준 손과, 비틀거리며 멀어지는 아이의 뒷모습"></div>
+  <div class="bike-rules">
+    <p class="note">“페달을 밟기 전에 먼저 <em>균형</em>을 잡아.”</p>
+    <p class="note">“핸들은 너무 세게 잡지 말고,”</p>
+    <p class="note">“속도가 붙으면 발을 떼면 안 돼.”</p>
+    <p class="note">“넘어질 것 같으면 브레이크를 잡으면서<br>한쪽 발을 땅에 딛어.”</p>
+  </div>
+  <h2 class="bike-h bike-h1 typed" data-type="넘어지고,\n또 넘어지고."></h2>
+  <h2 class="bike-h bike-h2 typed" data-type="어느 날 갑자기,\n혼자서 {씽씽}."></h2>
+  <p class="bike-body">아이는 규칙을 외워서 타는 게 아닙니다. 수십 번의 시행착오를 몸으로 겪으면서 <b>스스로 균형 잡는 법을 터득한</b> 거죠.</p>
+  <p class="bike-cap mono">시행착오 — 넘어진 자리마다 ✕ <span>· 바퀴 자국은 개념을 보여 주는 그림입니다</span></p>
+  <svg class="tracks" viewBox="0 0 1920 1080" aria-hidden="true"></svg>
+  <div class="bike-tags">
+    <p class="tg a"><b>규칙 기반</b>사람이 정한 규칙대로 움직이는 AI</p>
+    <i>vs</i>
+    <p class="tg b"><b>머신러닝</b>수많은 시행착오를 통해 혼자 학습하는 AI</p>
+  </div>
+</section>
+
+<!-- 03 IF-THEN -->
+<section class="slide" id="ifthen" data-title="IF-THEN">
+  <p class="kicker">1960년대 · 컴퓨터가 인간의 일을 조금씩 대신하기 시작할 무렵</p>
+  <p class="if-quote typed" data-type="‘인간 전문가의 {지식}을\n컴퓨터에 그대로 집어넣으면\n인공지능이 되지 않을까?’"></p>
+  <div class="if-name"><h2 class="h-l riso">규칙 기반 시스템</h2><p>혹은 <b>전문가 시스템</b> — 인공지능의 소박한 출발점</p></div>
+  <p class="if-how">전문가에게 묻습니다. <b>“어떤 상황에서 어떤 판단을 내리십니까?”</b><br>그 답을 <em class="mono">IF-THEN</em>(만약-그렇다면) 형태로 코딩합니다.</p>
+  <div class="ifm" data-nodrag>
+    <p class="ifm-tag mono"><b>IF</b> 만약</p>
+    <div class="cond" data-k="temp"><i class="lamp"></i><span>환자의 체온이 <b>38도 이상</b>이고</span>
+      <label><input type="range" min="36" max="40" step="0.1" value="36.5" aria-label="체온"><output class="mono">36.5℃</output></label></div>
+    <button class="cond" data-k="throat"><i class="lamp"></i><span>목이 붓고</span><u class="sw"><s></s></u></button>
+    <button class="cond" data-k="cough"><i class="lamp"></i><span>기침이 나온다면</span><u class="sw"><s></s></u></button>
+    <p class="ifm-tag then mono"><b>THEN</b> 그렇다면</p>
+    <div class="ifm-out"><b>해열제를 처방한다</b><span class="ifm-msg">조건 세 개가 모두 참이어야 규칙이 움직입니다.</span></div>
+    <small>책에 실린 예시 규칙입니다 · 손잡이와 스위치를 직접 움직여 보세요</small>
+  </div>
+</section>
+
+<!-- 04 마이신 -->
+<section class="slide" id="mycin" data-title="마이신">
+  <p class="kicker">1970년대 · 미국 스탠퍼드 대학교 · 의료 전문가 시스템</p>
+  <h2 class="h-xl my-title riso" data-scr="마이신"></h2>
+  <p class="my-sub mono">MYCIN — 항생제 이름에 흔히 붙는 접미사 ‘-mycin’에서</p>
+  <div class="my-crt mono">
+    <p class="ln q typed" data-type="> 환자의 체온은 몇 도입니까?"></p>
+    <p class="ln a">의사 입력 <i></i></p>
+    <p class="ln q typed" data-type="> 배양 검사에서 어떤 균이 검출되었습니까?"></p>
+    <p class="ln a">의사 입력 <i></i></p>
+    <p class="ln r">⇒ 가능한 원인균을 추론하고,<br>&nbsp;&nbsp;&nbsp;적절한 항생제와 투여량까지 제안</p>
+  </div>
+  <p class="my-crt-cap">질문을 순서대로 던지면 의사가 답을 입력합니다 — 진료 과정과 닮은 방식</p>
+  <div class="my-wall" data-nodrag><div class="my-cards"></div></div>
+  <p class="my-count"><b class="mono">450</b><span>약 450개의 <em class="mono">IF-THEN</em> 규칙만으로<br>감염성 질환을 진단했습니다</span></p>
+  <div class="my-eval">
+    <h3>처방 정확도 <small>1979년 스탠퍼드 의과대학 비교 평가</small></h3>
+    <div class="ev"><span class="nm">마이신</span><div class="bar"><i class="fill"></i></div><b class="mono">약 65%</b></div>
+    <div class="ev"><span class="nm">감염병 전문의</span><div class="bar"><i class="range"></i></div><b class="mono">약 42.5~62.5%</b></div>
+    <p>당시 일반 의사들의 평균을 뛰어넘고, 전문의보다 높거나 비슷한 수준.</p>
+  </div>
+</section>
+
+<!-- 05 마이신의 유산 -->
+<section class="slide" id="legacy" data-title="쓰이지 못한 명의">
+  <p class="kicker">그럼에도 — 마이신은 실제 병원에서 사용되지 못했습니다</p>
+  <h2 class="h-l lg-title">정확했지만,<br>병원에 가지 못했다</h2>
+  <div class="print lg-print"><img class="ill" src="img/terminal_med.webp" alt="청진기와 약병 옆에 놓인 1970년대 컴퓨터 단말기"></div>
+  <span class="lg-stamp">사용되지 못함</span>
+  <div class="lg-why w1 note"><b>윤리적 논란</b>당시 의료계에서는 기계의 판단을 둘러싼 논란이 컸습니다.</div>
+  <div class="lg-why w2 note"><b>떨어지는 실용성</b>의사가 입력해야 할 데이터의 양이 너무 많았습니다.</div>
+  <blockquote class="lg-q"><div class="in"><small>당시 의료계의 물음</small>“기계의 판단을 믿고<br>환자에게 약을 처방할 수<br>있느냐”</div></blockquote>
+  <div class="cf" data-nodrag>
+    <h3>마이신이 남긴 가장 큰 유산 <em>확신도</em></h3>
+    <p class="cf-rule mono"><b>IF</b> 조건 <b>THEN</b> 진단 <span>( 확신도 <output>0.70</output> )</span></p>
+    <input type="range" min="0" max="1" step="0.01" value="0.7" aria-label="확신도">
+    <div class="cf-dots"></div>
+    <p class="cf-read">이 진단이 맞을 가능성 <b class="mono">70%</b></p>
+    <p class="cf-foot">규칙마다 0에서 1 사이의 값을 붙였습니다. 오늘날 AI가 결과와 함께 <b>‘신뢰도’</b>를 보여 주는 방식의 원조입니다. <small>손잡이의 값은 예시입니다.</small></p>
+  </div>
+</section>
+
+<!-- 06 지금도 일하는 규칙 -->
+<section class="slide" id="today" data-title="지금도 일하는 규칙">
+  <p class="kicker">기업 현장에서, 그리고 우리 일상에서</p>
+  <h2 class="h-l td-title">규칙은 지금도<br><em>일하고</em> 있다</h2>
+  <div class="td-xcon"><small>기업 현장에서 — DEC사의 전문가 시스템 ‘엑스콘’</small><p><i>연간</i><b class="mono">4,000</b>만 달러</p><span>비용을 절감하며 AI의 실질적 가치를 증명했습니다</span></div>
+  <div class="trace" data-nodrag>
+    <h3>우리 일상에서 — 매일 쓰는 이메일의 스팸 필터 <small>메일을 눌러 규칙을 통과시켜 보세요 · 예시 메일</small></h3>
+    <div class="tr-mails"></div>
+    <i class="rail"></i>
+    <div class="gate g1"><b class="mono">규칙 01</b><span>‘광고’가 들어 있으면<br>스팸으로 분류</span></div>
+    <div class="gate g2"><b class="mono">규칙 02</b><span>‘이벤트’가 들어 있으면<br>스팸으로 분류</span></div>
+    <div class="bin inbox"><b>받은편지함</b></div>
+    <div class="bin spam"><b>스팸함</b></div>
+    <div class="chip"><svg viewBox="0 0 60 44"><rect x="2" y="2" width="56" height="40" rx="3"/><path d="M3 4l27 20L57 4"/></svg></div>
+    <div class="tr-rcpt"><h4 class="mono">판정 기록</h4><ol class="tr-log mono"></ol><p class="tr-empty">아직 기록이 없습니다</p></div>
+  </div>
+  <p class="td-loan"><b>은행의 대출 심사도 마찬가지입니다.</b> 규칙이 명확하기 때문에 결과를 <em>투명하게 설명</em>할 수 있고,<br>사람이 직접 <em>확인하고 추적</em>할 수 있다는 것이 이 방식의 큰 장점입니다.</p>
+</section>
+
+<!-- 07 규칙으로 고양이 찾기 -->
+<section class="slide" id="cats" data-title="규칙으로 고양이 찾기">
+  <p class="kicker">1980년대 후반 · 치명적인 한계 <b>①</b> 끝없는 예외</p>
+  <h2 class="ct-title">고양이와 개를 가르는<br>규칙을 써 보세요</h2>
+  <div class="ct-rules" data-nodrag>
+    <h3>규칙 카드 <small>누르면 규칙표에 들어갑니다 · 나중에 넣은 규칙이 먼저 적용</small></h3>
+    <div class="ct-list"></div>
+    <button class="btn ct-reset" data-act="reset">처음부터</button>
+  </div>
+  <div class="ct-grid"></div>
+  <div class="ct-foot">
+    <p class="ct-score"><b class="mono">0</b><span>/ <i>2</i>마리 정답</span></p>
+    <p class="ct-msg"></p>
+  </div>
+  <small class="ct-cap">스코티시 폴드와 스핑크스는 책의 사례, 나머지 동물과 ‘예시’ 규칙은 시연용으로 덧붙인 것입니다</small>
+</section>
+
+<!-- 08 암묵지 -->
+<section class="slide" id="tacit" data-title="암묵지">
+  <p class="kicker">한계 <b>②</b> 더 근본적인 문제 · 암묵지 Tacit Knowledge</p>
+  <p class="tc-q">오랜 경험을 가진 의사에게 묻습니다. <b>“왜 그 진단을 내리셨나요?”</b></p>
+  <h2 class="tc-a typed" data-type="“그냥 경험상\n그런 {느낌}이 왔어요.”"></h2>
+  <div class="print tc-print"><img class="ill" src="img/potter_hands.webp" alt="물레 위의 흙을 빚는 두 손"></div>
+  <div class="tc-card" data-nodrag>
+    <h3>이 직감을 규칙으로 적어 볼까요? <small>눌러 보세요</small></h3>
+    <div class="tc-chips">
+      <button class="tcc" data-k="0">도예가의 손끝</button><button class="tcc" data-k="1">조종사의 직감</button><button class="tcc" data-k="2">어머니의 귀</button>
+    </div>
+    <p class="tc-line mono"><b>IF</b> <span class="tc-if"></span></p>
+    <p class="tc-line mono"><b>THEN</b> <span class="tc-then"></span></p>
+    <p class="tc-note">타자기가 쓰다 지우는 문장은 책의 사례를 바탕으로 지어낸 예시입니다.</p>
+    <span class="tc-stamp">무용지물</span>
+  </div>
+  <div class="tc-pol">
+    <blockquote>“우리는 말할 수 있는 것보다<br><em>더 많은 것</em>을 알고 있다.”</blockquote>
+    <p class="who">— 마이클 폴라니, 1958년 · 암묵지를 처음 제안한 과학철학자</p>
+    <div class="defs"><p><b>형식지</b>교과서나 매뉴얼처럼 글로 적어 누구에게든 전달할 수 있는 지식</p><p><b class="r">암묵지</b>경험과 반복을 통해서만 체득할 수 있는 지식</p></div>
+  </div>
+</section>
+
+<!-- 09 벽돌탑 -->
+<section class="slide" id="tower" data-title="벽돌탑">
+  <p class="kicker">한계 <b>③</b> 유지보수 · 규칙이 수천, 수만 개로 불어나면</p>
+  <h2 class="h-l tw-title">벽돌 하나를 빼면,<br><em>어디가</em> 무너질까</h2>
+  <p class="tw-body">규칙 하나를 고칠 때 다른 어떤 규칙과 충돌하는지 파악하기가 점점 어려워집니다. 거대하게 쌓아 올린 벽돌탑처럼요.</p>
+  <div class="tw-side" data-nodrag>
+    <p class="tw-stat"><span>뺀 규칙</span><b class="mono n1">0</b><span>함께 무너진 규칙</span><b class="mono n2">0</b></p>
+    <p class="tw-msg">아무 벽돌이나 하나 눌러서 빼 보세요.</p>
+    <button class="btn" data-act="rebuild">다시 쌓기</button>
+    <small>규칙 사이의 숨은 의존 관계는 시연용으로 매번 무작위로 정합니다</small>
+  </div>
+  <div class="tw-wrap" data-nodrag><svg class="tw-links" viewBox="0 0 800 680"></svg><div class="tw-bricks"></div><i class="tw-ground"></i></div>
+</section>
+
+<!-- 10 발상의 전환 -->
+<section class="slide" id="turn" data-title="발상의 전환">
+  <p class="kicker">연구자들은 발상을 바꿨습니다 · 머신러닝(기계학습)의 등장</p>
+  <p class="tn-quote typed" data-type="‘우리가 규칙을 만들어 넣는 게 아니라,\n컴퓨터가 데이터를 보고\n{스스로 규칙을 찾아내게} 하면 어떨까?’"></p>
+  <div class="print tn-print"><img class="ill" src="img/cat_photos.webp" alt="흩어져 쌓인 고양이 사진들"></div>
+  <div class="eq" data-nodrag>
+    <div class="eq-sw"><button class="eqb on" data-m="rule">규칙 기반</button><button class="eqb" data-m="ml">머신러닝</button><span class="eq-say"></span></div>
+    <div class="tile t-r" data-k="r"><b>규칙</b><div class="caps"><span class="cap c-rule">‘귀가 뾰족하면 고양이다’<br>— 사람이 써 넣는다</span><span class="cap c-ml">AI가 스스로 파악한<br>고양이의 특징</span></div></div>
+    <div class="tile t-d" data-k="d"><b>데이터</b><div class="caps"><span class="cap c-rule">사진 한 장</span><span class="cap c-ml">수천 장의 고양이 사진</span></div></div>
+    <div class="tile t-o" data-k="o"><b>결과</b><div class="caps"><span class="cap c-rule">‘고양이’<br>— 컴퓨터가 낸다</span><span class="cap c-ml">“AI야, 이게 고양이야”<br>— 사람이 알려 준다</span></div></div>
+    <i class="op plus">+</i><i class="op eqs">=</i>
+    <div class="tn-note note"><b>기계적 암묵지</b>이때 AI가 터득하는 것은 명시적 규칙이 아니라 데이터 속에 숨겨진 패턴입니다. 말로 옮길 수 없던 암묵지의 영역에, 머신러닝이 도전하고 있습니다.</div>
+  </div>
+</section>
+
+<!-- 11 스팸 필터의 진화 -->
+<section class="slide" id="spam" data-title="스팸 필터의 진화">
+  <p class="kicker">스팸 필터의 진화 · 같은 메일, 두 개의 필터</p>
+  <div class="sp-col sp-l" data-nodrag>
+    <h3>규칙 기반 필터</h3><p class="sub">사람이 직접 써 넣은 규칙</p>
+    <ol class="sp-rules mono"></ol>
+    <p class="sp-stat">틀린 판정 <b class="mono">0</b>통</p>
+    <button class="btn" data-act="addrule" disabled>뚫린 단어를 규칙에 추가</button>
+  </div>
+  <div class="sp-mid" data-nodrag>
+    <p class="sp-head"><b class="day">1일째</b><span class="what">오늘 온 메일 네 통</span></p>
+    <div class="sp-rows"></div>
+    <div class="sp-ctl"><button class="btn sp-go" data-act="go">메일 받기</button><p class="sp-msg">버튼을 눌러 두 필터에 같은 메일을 넣어 보세요.</p></div>
+  </div>
+  <div class="sp-col sp-r" data-nodrag>
+    <h3>머신러닝 필터</h3><p class="sub">예시 메일 <b class="nd">16</b>통을 보고 스스로 찾은 단서</p>
+    <ol class="sp-toks mono"></ol>
+    <p class="sp-stat">틀린 판정 <b class="mono">0</b>통</p>
+    <button class="btn" data-act="learn" disabled>스팸 신고 → 다시 학습</button>
+  </div>
+  <small class="sp-cap">메일은 모두 시연용으로 지어낸 것입니다 · 머신러닝 필터는 단어를 세는 나이브 베이즈 분류기로, 실제로 학습합니다 · 책 속의 필터는 수백만 건을 학습합니다</small>
+</section>
+
+<!-- 12 지도 학습 -->
+<section class="slide" id="sup" data-title="지도 학습">
+  <p class="kicker">어떻게 배울 것인가 <b>①</b> 지도 학습 Supervised Learning</p>
+  <h2 class="lr-title">정답을 붙여서<br><em>가르친다</em></h2>
+  <p class="lr-body">선생님이 고양이 사진 1만 장에 ‘고양이’라고 <b>정답(라벨)</b>을 붙여 주면, AI가 그 사진들에서 공통된 특징을 찾아 학습합니다. 예제 문제와 풀이를 함께 주는 셈이죠.</p>
+  <p class="lr-most">오늘날 우리가 쓰는 AI 대부분이 이 방식으로 만들어집니다.</p>
+  <div class="lr-ctl" data-nodrag>
+    <p>찍을 예제의 정답을 고르고, 오른쪽 판을 누르세요</p>
+    <div class="lr-modes"><button class="lm on" data-m="1"><i class="d r"></i>고양이</button><button class="lm" data-m="0"><i class="d k"></i>고양이 아님</button><button class="lm" data-m="q"><i class="d q">?</i>맞혀 봐</button></div>
+    <div class="lr-btns"><button class="btn" data-act="clear">모두 지우기</button><button class="btn" data-act="preset">예시 다시</button></div>
+    <p class="lr-stat"></p>
+  </div>
+  <div class="plot lr-plot" data-nodrag><canvas width="1800" height="1400"></canvas><span class="ax">가로·세로 = 사진에서 뽑은 두 가지 특징</span></div>
+  <small class="lr-cap">시연용 가상 데이터 · 로지스틱 회귀가 실제로 경사 하강을 하며 선을 찾습니다 · 망점이 클수록 ‘고양이’라는 확신이 큽니다</small>
+</section>
+
+<!-- 13 비지도 학습 -->
+<section class="slide" id="unsup" data-title="비지도 학습">
+  <p class="kicker">어떻게 배울 것인가 <b>②</b> 비지도 학습 Unsupervised Learning</p>
+  <div class="plot km-plot" data-nodrag><canvas width="1800" height="1400"></canvas><span class="ax">가로·세로 = 시청 기록에서 뽑은 두 가지 취향</span></div>
+  <h2 class="km-title">정답 없이,<br><em>스스로</em> 묶는다</h2>
+  <p class="km-body">정답 없이 데이터만 주면, AI가 스스로 숨겨진 패턴이나 구조를 찾아냅니다.</p>
+  <ul class="km-ex">
+    <li><b>넷플릭스</b>시청 기록을 분석해 비슷한 취향의 사람들을 묶는다</li>
+    <li><b>구글 포토</b>사진에서 인물과 장소를 자동으로 분류한다</li>
+  </ul>
+  <div class="km-ctl" data-nodrag>
+    <p>몇 묶음으로 나눌까요?</p>
+    <div class="km-k"><button class="kk" data-k="2">2</button><button class="kk on" data-k="3">3</button><button class="kk" data-k="4">4</button></div>
+    <div class="km-btns"><button class="btn" data-act="run">묶어 보기</button><button class="btn" data-act="shuffle">점 다시 뿌리기</button></div>
+    <p class="km-stat">점 하나가 시청자 한 명입니다. 판을 눌러 점을 더 찍을 수도 있어요.</p>
+  </div>
+  <small class="km-cap">시연용 가상 데이터 · k-평균 알고리즘이 실제로 중심을 옮겨 가며 묶습니다</small>
+</section>
+
+<!-- 14 강화 학습 -->
+<section class="slide" id="rl" data-title="강화 학습">
+  <p class="kicker">어떻게 배울 것인가 <b>③</b> 강화 학습 Reinforcement Learning</p>
+  <h2 class="rl-title">잘하면 <em>당근</em>,<br>못하면 채찍</h2>
+  <p class="rl-body">AI가 좋은 결과를 냈을 때 보상을, 나쁜 결과를 냈을 때 감점을 주는 방식입니다. 당근과 채찍으로 동물을 훈련하는 것과 비슷한 원리죠.</p>
+  <img class="ill rl-ill" src="img/carrot_stick.webp" alt="막대 끝에 매달린 당근을 향해 손을 뻗는 태엽 로봇">
+  <div class="rl-stage" data-nodrag>
+    <p class="rl-say"><b>…</b></p>
+    <svg class="bot" viewBox="0 0 300 380" aria-hidden="true">
+      <ellipse class="b-shadow" cx="150" cy="356" rx="96" ry="10"/>
+      <g class="b-all">
+        <g class="b-legs"><rect x="98" y="262" width="34" height="76" rx="6"/><rect x="168" y="262" width="34" height="76" rx="6"/><rect class="rf" x="84" y="330" width="60" height="24" rx="9"/><rect class="rf" x="156" y="330" width="60" height="24" rx="9"/></g>
+        <g class="b-up">
+          <g class="b-al"><rect x="38" y="148" width="28" height="94" rx="13"/><circle class="rf" cx="52" cy="248" r="16"/></g>
+          <g class="b-ar"><rect x="234" y="148" width="28" height="94" rx="13"/><circle class="rf" cx="248" cy="248" r="16"/></g>
+          <rect class="rf b-body" x="70" y="138" width="160" height="134" rx="14"/>
+          <circle class="pf" cx="150" cy="206" r="32"/><path class="ln" d="M150 206L170 186"/><circle cx="150" cy="206" r="7"/>
+          <rect x="130" y="124" width="40" height="18"/>
+          <rect class="b-head" x="86" y="44" width="128" height="88" rx="16"/>
+          <circle class="pf" cx="122" cy="84" r="15"/><circle class="pf" cx="178" cy="84" r="15"/><circle cx="125" cy="87" r="6"/><circle cx="181" cy="87" r="6"/>
+          <rect class="pf" x="124" y="110" width="52" height="8" rx="4"/>
+          <path class="ln" d="M150 44V20"/><circle class="rf" cx="150" cy="14" r="11"/>
+        </g>
+      </g>
+    </svg>
+    <div class="rl-fb">
+      <button class="fb carrot" data-r="1" disabled><svg viewBox="0 0 60 60"><path class="c1" d="M30 58C18 40 14 28 18 20c3-6 21-6 24 0 4 8 0 20-12 38z"/><path class="c2" d="M30 18c-6-8-6-12-2-16M30 18c0-8 2-12 6-14M30 18c6-6 10-8 14-8"/></svg><b>당근</b><span class="mono">+1</span></button>
+      <button class="fb whip" data-r="-1" disabled><svg viewBox="0 0 60 60"><path class="c3" d="M8 52L30 14"/><path class="c2" d="M30 14c10-12 24-4 16 6s-2 18 8 14"/></svg><b>채찍</b><span class="mono">−1</span></button>
+    </div>
+    <p class="rl-hint">마음속으로 동작 하나를 정하고, 로봇이 그 동작을 했을 때만 당근을 주세요. <span class="mono">↑ 당근 · ↓ 채찍</span></p>
+  </div>
+  <div class="rl-brain" data-nodrag>
+    <h3>로봇의 머릿속 <small>다음에 이 동작을 고를 확률</small></h3>
+    <ol class="rl-bars"></ol>
+    <p class="rl-n">훈련 <b class="mono">0</b>번 <button class="btn" data-act="reset">백지로</button></p>
+    <small>밴딧 방식의 아주 단순한 강화 학습입니다. 로봇은 동작의 이름도, 당신의 속마음도 모릅니다. 보상만 봅니다.</small>
+  </div>
+  <div class="rl-note note"><b>알파고도 같은 원리</b>아무런 전략도 가르쳐 주지 않고, 수만 번의 대국을 스스로 두면서 이기는 법을 깨우치게 했습니다. 그렇게 이세돌 9단을 이겼죠.</div>
+</section>
+
+<!-- 15 뼈대와 근육 -->
+<section class="slide" id="hybrid" data-title="뼈대와 근육">
+  <p class="kicker">머신러닝을 이해하면 보이는 것 · 현실의 AI는 둘을 함께 씁니다</p>
+  <h2 class="hy-title typed" data-type="규칙이라는 {뼈대} 위에,\n머신러닝이라는 {근육}을."></h2>
+  <p class="hy-body">AI는 단순한 연산에도 많은 전력을 소모합니다. 그래서 규칙으로 처리할 수 있는 것을 먼저 걸러 내고, AI의 판단이 꼭 필요한 부분만 정제해서 넘깁니다.</p>
+  <img class="ill hy-ill" src="img/bone_muscle.webp" alt="뼈 위에 근육이 붙은 팔의 해부도">
+  <div class="flow" data-nodrag>
+    <canvas width="3360" height="660"></canvas>
+    <span class="fl-lab in">들어오는 일</span>
+    <div class="fl-box rule"><b>규칙</b><span>먼저 걸러 낸다</span></div>
+    <div class="fl-box ai"><b>머신러닝</b><span>꼭 필요한 판단만</span><div class="cells"></div></div>
+    <span class="fl-lab done">규칙으로 처리 끝</span>
+    <div class="fl-power"><span>AI가 쓰는 전력</span><div class="segs"></div></div>
+    <button class="btn fl-toggle" data-act="toggle">규칙 걸러 내기 끄기</button>
+    <p class="fl-msg"></p>
+    <small>흐름을 보여 주는 개념 그림입니다 · 점의 수와 비율은 실제 수치가 아닙니다</small>
+  </div>
+</section>
+
+<!-- 16 당신의 답 -->
+<section class="slide" id="end" data-title="당신의 답">
+  <p class="kicker">2장을 덮으며 — 다시, 처음의 질문</p>
+  <h2 class="end-title">세상의 모든 <em>규칙</em>을 컴퓨터에 집어넣으면,<br>AI가 될까?</h2>
+  <div class="vote" data-nodrag><button class="vb" data-v="y"><b>된다</b><span>규칙을 충분히 쌓기만 하면</span></button><button class="vb" data-v="n"><b>안 된다</b><span>규칙으로 담을 수 없는 것이 있다</span></button></div>
+  <p class="vote-out"></p>
+  <div class="recap">
+    <div class="note"><b>규칙 기반 시스템</b>전문가의 지식을 IF-THEN으로 옮긴다. 투명하지만, 예외와 암묵지 앞에서 멈춘다.</div>
+    <div class="note"><b>머신러닝</b>‘데이터 + 결과 = 규칙’. 기계가 데이터를 보고 스스로 규칙을 찾아낸다.</div>
+    <div class="note"><b>세 가지 학습, 그리고 뼈대</b>지도·비지도·강화 학습. 현실의 AI는 규칙이라는 뼈대에 머신러닝이라는 근육을 붙인다.</div>
+  </div>
+  <a class="next-note note" href="../ch03/"><small>다음 쪽지 · 3장</small><b>AI는 왜 두 번이나 죽었다가 살아났을까 : 기대와 실망의 70년 드라마</b><span class="mono">3장으로 →</span></a>
+</section>
+
+<div class="grain"></div>
+</div></div>
+<div class="rotate-hint">가로 화면에서 가장 잘 보입니다</div>
+
+<script src="../shared/lib/gsap.min.js"></script>
+<script src="../shared/deck.js"></script>
+<script src="ch02.js"></script>
+<script>Deck.start();</script>
+</body>
+</html>

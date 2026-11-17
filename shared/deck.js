@@ -183,7 +183,7 @@
       <button class="tp-arrow" data-d="-1" aria-label="이전">←</button>
       <div class="tp-cells">${D.ctx.map((c, i) => `<button class="tp-cell" data-i="${i}" title="${String(i + 1).padStart(2, '0')} ${c.title}"><b>0</b></button>`).join('')}<i class="tp-head"></i></div>
       <button class="tp-arrow" data-d="1" aria-label="다음">→</button>
-      <div class="tp-side r"><span class="tp-steps"></span><button class="tp-btn" data-act="snd">소리 켜기</button><button class="tp-btn" data-act="fs">전체 화면</button></div>`;
+      <div class="tp-side r"><span class="tp-steps"></span><button class="tp-btn" data-act="snd">소리 켜기</button><button class="tp-btn" data-act="fs">전체 화면</button><a class="tp-buy" href="../#buy">책 구매</a></div>`;
     stage.appendChild(nav);
     nav.addEventListener('click', (e) => {
       const t = e.target.closest('button'); if (!t) return;

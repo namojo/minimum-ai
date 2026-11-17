@@ -169,7 +169,7 @@
       tl.fromTo(strips, { yPercent: 0 }, { yPercent: -90, duration: 1.7, ease: 'power4.out', stagger: 0.055 }, 0.3)
         .from($$('.big-num .c', el), { opacity: 0, y: -30, stagger: 0.05, duration: 0.3 }, 1.6)
         .from($$('.kor-num .u', el), { y: 50, opacity: 0, stagger: 0.13, ease: 'back.out(2)' }, 2.2);
-      const s1 = D.tl().from($('.num-sim', el), { y: 460, rotation: 4, duration: 0.9, ease: 'power4.out' });
+      const s1 = D.tl().from($('.num-sim', el), { y: 640, rotation: 4, duration: 0.9, ease: 'power4.out' });
 
       const N = 158962555217826360000, YEAR = 31557600, UNIV = 1.38e10, HUMAN = 3e5;
       const range = $('input', el), ppl = $('.ppl', el), yrs = $('.yrs', el), cmp = $('.cmp', el), mark = $('.sim-bar .u', el);
@@ -303,7 +303,7 @@
         .from($('.tm-head', el), { y: -420, duration: 0.8, ease: 'bounce.out' }, 1.2)
         .from($$('.pc', el), { y: 240, rotation: () => gsap.utils.random(-14, 14), stagger: 0.1, ease: 'back.out(1.3)', clearProps: 'transform' }, 1.3)
         .from([$('.tm-progs h3', el), $('.tm-rules', el), $('.tm-ctl', el)], { y: 40, opacity: 0, stagger: 0.12 }, 1.5);
-      const s1 = D.tl().from($('.tm-uni', el), { x: 560, rotation: 14, duration: 0.9, ease: 'back.out(1.2)' });
+      const s1 = D.tl().from($('.tm-uni', el), { x: 760, rotation: 14, duration: 0.9, ease: 'back.out(1.2)' });
       return [tl, s1];
     },
     enter(el, c) { c.load('flip'); },
@@ -683,7 +683,7 @@
       tl.from($('.end-title', el), { y: 70, opacity: 0, duration: 0.9 }, 0.2)
         .from(vbs, { y: 220, rotation: (i) => (i ? 8 : -8), opacity: 0, stagger: 0.15, duration: 0.8, ease: 'back.out(1.4)', clearProps: 'transform,opacity' }, 0.8);
       const s1 = D.tl()
-        .from($$('.recap .note', el), { y: 380, rotation: () => gsap.utils.random(-12, 12), stagger: 0.14, duration: 0.8, ease: 'back.out(1.1)' }, 0)
+        .from($$('.recap .note', el), { y: 560, rotation: () => gsap.utils.random(-12, 12), stagger: 0.14, duration: 0.8, ease: 'back.out(1.1)' }, 0)
         .from($('.next-note', el), { x: 1900, duration: 0.9, ease: 'power4.out' }, 0.6);
       return [tl, s1];
     },
